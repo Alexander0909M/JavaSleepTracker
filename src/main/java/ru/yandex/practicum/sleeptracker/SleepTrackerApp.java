@@ -29,7 +29,7 @@ public class SleepTrackerApp {
                         .map(line -> {
                             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy HH:mm");
                             LocalDateTime start = LocalDateTime.parse(line.split(";")[0], formatter);
-                            line = line.substring(line.indexOf(";")+1);
+                            line = line.substring(line.indexOf(";") + 1);
                             LocalDateTime end = LocalDateTime.parse(line.split(";")[0], formatter);;
                             SleepQuality quality = qualities.get(line.split(";")[1]);
                             SleepingSession session = new SleepingSession(
