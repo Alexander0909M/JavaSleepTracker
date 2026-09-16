@@ -21,8 +21,8 @@ public class SleepingProfile implements Function<List<SleepingSession>, String> 
                                 return owl;
                             }
                             else if (
-                                    sleepingSession.getStartSleep().toLocalTime().isBefore(LocalTime.of(22, 0)) &&
-                                            sleepingSession.getEndSleep().toLocalTime().isBefore(LocalTime.of(7, 0))
+                                sleepingSession.getStartSleep().toLocalTime().isBefore(LocalTime.of(22, 0)) &&
+                                        sleepingSession.getEndSleep().toLocalTime().isBefore(LocalTime.of(7, 0))
                             ) {
                                 return lark;
                             } else {
