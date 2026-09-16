@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SleepTrackerAppTest {
     @Test
-    public void WhenTwoSessionsInListThenTwo() {
+    public void whenTwoSessionsInListThenTwo() {
         SessionsCounter sleepingSessionsCounter = new SessionsCounter();
         LocalDateTime timeStart = LocalDateTime.now();
 
@@ -28,14 +28,14 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void WhenListEmptyThenZero() {
+    public void whenListEmptyThenZero() {
         SessionsCounter sleepingSessionsCounter = new SessionsCounter();
         ArrayList<SleepingSession> sessions = new ArrayList<>();
         Assertions.assertEquals(0, sleepingSessionsCounter.apply(sessions));
     }
 
     @Test
-    public void MinDurationIsTen() {
+    public void minDurationIsTen() {
         ShortestSleepSession shortestSleepSession = new ShortestSleepSession();
         LocalDateTime timeStart = LocalDateTime.now();
 
@@ -59,7 +59,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void MaxDurationIsEightHours() {
+    public void maxDurationIsEightHours() {
         LongestSleepSession longestSleepSession = new LongestSleepSession();
         LocalDateTime timeStart = LocalDateTime.now();
 
@@ -83,7 +83,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void AverageDurationIsFoutHoursAndFortyMinutes() {
+    public void averageDurationIsFoutHoursAndFortyMinutes() {
         AverageSleepSession averageSleepSession = new AverageSleepSession();
         LocalDateTime timeStart = LocalDateTime.now();
 
@@ -107,7 +107,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void WhenOneSleepIsBadResultOne() {
+    public void whenOneSleepIsBadResultOne() {
         BadSleepCount badSleepQualityCount = new BadSleepCount();
         LocalDateTime timeStart = LocalDateTime.now();
 
@@ -131,7 +131,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void WhenTwoSleeplessNightsResultTwo() {
+    public void whenTwoSleeplessNightsResultTwo() {
         SleeplessNightsCount sleeplessNightsCount = new SleeplessNightsCount();
         LocalDateTime timeStart = LocalDateTime.of(
                 LocalDate.of(2026, 9, 16),
@@ -157,7 +157,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void WhenZeroSleeplessNightsResultZero() {
+    public void whenZeroSleeplessNightsResultZero() {
         SleeplessNightsCount sleeplessNightsCount = new SleeplessNightsCount();
         LocalDateTime timeStart = LocalDateTime.of(
                 LocalDate.of(2026, 9, 16),
@@ -183,7 +183,7 @@ public class SleepTrackerAppTest {
     }
 
     @Test
-    public void WhenFirstDauStartsAfter12ItArentCount() {
+    public void whenFirstDauStartsAfter12ItArentCount() {
         SleeplessNightsCount sleeplessNightsCount = new SleeplessNightsCount();
         LocalDateTime timeStart = LocalDateTime.of(
                 LocalDate.of(2026, 9, 16),
