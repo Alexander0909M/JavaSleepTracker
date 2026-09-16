@@ -5,7 +5,7 @@ import java.util.function.Function;
 public class SleeplessNightsCount implements Function<List<SleepingSession>, Integer> {
     @Override
     public Integer apply(List<SleepingSession> sleepingSessions) {
-        TimePeriod nt = new TimePeriod(LocalTime.of(0,0), LocalTime.of(6, 0));
+        TimePeriod nt = new TimePeriod(LocalTime.of(0, 0), LocalTime.of(6, 0));
         SessionsBatch sleepingSessionsBatch = new SessionsBatch(sleepingSessions);
         long result = sleepingSessionsBatch.getNightDates().stream()
                 .map(night -> {

@@ -17,7 +17,7 @@ public class SessionsBatch {
                 .toList());
         this.sessionsByDate = this.sleepingSessionList.stream()
                 .collect(Collectors.groupingBy(session -> session.startSleep.toLocalDate()));
-        if (this.sleepingSessionList.getFirst().startSleep.toLocalTime().isAfter(LocalTime.of(12,0))) {
+        if (this.sleepingSessionList.getFirst().startSleep.toLocalTime().isAfter(LocalTime.of(12, 0))) {
             this.nightDates.removeFirst();
         }
     }
